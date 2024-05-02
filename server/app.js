@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+const dbConnection = require('./db/client')
 
 // Logging middleware
 app.use(morgan("dev"));
@@ -36,7 +37,21 @@ app.use((error, req, res, next) => {
     });
 });
 
+app.get('/questions', async (req, res) => {
+    try {
+      const collection = await dbConnection(); //b/c main is asynchronous we need to await its result
+      const questions = await collection.find().toArray(); //query the result 
+      console.log(questions)
+      res.status(200).json(questions);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+
 // 404 handler
+//this needs to be at the end. This should only execute after nothing matches with the routes defined above. 
 app.get('*', (req, res) => {
     res.status(404).send({
         error: '404 - Not Found',

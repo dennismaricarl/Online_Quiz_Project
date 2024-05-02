@@ -1,5 +1,18 @@
-const { PrismaClient } = require('@prisma/client');
+const {MongoClient} = require('mongodb')
 
-const prisma = new PrismaClient();
+const connectionString = "mongodb://localhost:27017/onlinequiz";
+const client = new MongoClient(connectionString);
 
-module.exports = prisma;
+async function dbConnection(){
+  try {
+    await client.connect();
+    console.log("Connected to db successfully")
+    return client.db().collection('questions')
+
+  } catch(e) {
+    console.error(e);
+  }
+
+}
+
+module.exports = dbConnection 
