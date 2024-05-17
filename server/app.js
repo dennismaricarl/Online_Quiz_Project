@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const dbConnection = require('./db/client')
+const { getDb } = require('./db/client');
 
 // Logging middleware
 app.use(morgan("dev"));
@@ -37,17 +37,89 @@ app.use((error, req, res, next) => {
     });
 });
 
-app.get('/questions', async (req, res) => {
+
+//COLLECTIONS 
+app.get('/css', async (req, res) => {
     try {
-      const collection = await dbConnection(); //b/c main is asynchronous we need to await its result
-      const questions = await collection.find().toArray(); //query the result 
-      console.log(questions)
-      res.status(200).json(questions);
+      const db = await getDb();
+      let request = await db.collection("CSS");
+      const css = await request.find({}).toArray();
+      res.status(200).json(css);
+
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Could not fetch the documents' });
     }
   });
+
+  app.get('/html', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("HTML");
+      const html = await request.find({}).toArray();
+      res.status(200).json(html);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+
+  app.get('/html', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("HTML");
+      const html = await request.find({}).toArray();
+      res.status(200).json(html);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+  app.get('/javascript', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("JavaScript");
+      const javascript = await request.find({}).toArray();
+      res.status(200).json(javascript);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+
+  app.get('/advancedjs', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("AdvancedJS");
+      const advancedjs = await request.find({}).toArray();
+      res.status(200).json(advancedjs);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+  app.get('/womenincs', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("WomenInCS");
+      const womenincs = await request.find({}).toArray();
+      res.status(200).json(womenincs);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
+
 
 
 // 404 handler

@@ -10,9 +10,12 @@ const TakeAQuiz = () => {
 
     return (
         <>
-        <button>CATEGORY 1</button>
-        <button>CATEGORY 2</button>
-        <button>CATEGORY 3</button>
+        <button onClick={() => navigate('/HTML')}>HTML</button>
+        <button onClick={() => navigate('/css')}>CSS</button>
+        <button onClick={() => navigate('/JavaScript')}>JavaScript</button>
+        <button onClick={() => navigate('/Advancedjs')}>Advanced JavaScript</button>
+        <button onClick={() => navigate('/women')}>Women In Computer Science</button>
+     
         </>
     )
 }

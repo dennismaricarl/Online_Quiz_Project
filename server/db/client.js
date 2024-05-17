@@ -3,16 +3,23 @@ const {MongoClient} = require('mongodb')
 const connectionString = "mongodb://localhost:27017/onlinequiz";
 const client = new MongoClient(connectionString);
 
-async function dbConnection(){
+
+let db;
+
+async function connectToDatabase() {
   try {
     await client.connect();
-    console.log("Connected to db successfully")
-    return client.db().collection('questions')
-
-  } catch(e) {
+    console.log("Connected to db successfully");
+    db = client.db("onlinequiz"); // .db is a predefined function 
+  } catch (e) {
     console.error(e);
   }
-
+  return db
 }
 
-module.exports = dbConnection 
+connectToDatabase();
+
+
+module.exports = {
+  getDb: connectToDatabase
+};
