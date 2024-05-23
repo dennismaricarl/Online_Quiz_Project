@@ -14,7 +14,7 @@ const TakeAQuiz = () => {
         <button onClick={() => navigate('/css')}>CSS</button>
         <button onClick={() => navigate('/JavaScript')}>JavaScript</button>
         <button onClick={() => navigate('/Advancedjs')}>Advanced JavaScript</button>
-        <button onClick={() => navigate('/women')}>Women In Computer Science</button>
+        <button onClick={() => navigate('/womenincs')}>Women In Computer Science</button>
      
         </>
     )
