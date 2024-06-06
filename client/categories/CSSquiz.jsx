@@ -4,6 +4,7 @@ import { fetchCSSquestions } from "../api /fetchData";
 const CSSquiz = () => {
 
   const [ques, setQues] = useState([])
+const solution = []
 
   //recall: useEffect is synchronous, this is why we create an async function inside it and call it. 
   //keep useEffect synchronous so the React component behaves predictably. 
@@ -21,45 +22,70 @@ const CSSquiz = () => {
     CSSquestions();
   }, []);
 
+
+  const handleSubmit = () => {
+
+   console.log("hello")
+    // console.log(solution)
+
+  }
+
+
   return (
     <>
       <h1>CSS Questions</h1>
-      {ques && ques.map((cssQ) => (
+      {ques && ques.map((cssQ, i) => (
         <div>
           <h2>{cssQ.question}</h2>
 
           <ul style={{ listStyle: 'none' }}>
 
             <li>
-              <input type="checkbox" id="cssQ" value='A' />
+              <input
+                onChange={(e) => solution[i] = e.target.value }
+                type="radio"
+                id="cssQ1"
+                name={`cssQ${i}`}
+                value='A' />
               <label>{cssQ.options.A}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="cssQ" value='B' />
+              <input
+                onChange={(e) =>  solution[i] = e.target.value }
+                type="radio"
+                id="cssQ2"
+                name={`cssQ${i}`}
+                value='B' />
               <label>{cssQ.options.B}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="cssQ" value='C' />
+              <input onChange={(e) => solution[i] = e.target.value}
+                type="radio"
+                id="cssQ3"
+                name={`cssQ${i}`}
+                value='C' />
               <label>{cssQ.options.C}</label>
 
             </li>
 
-            <li>
-              <input type="checkbox" id="cssQ" value='D' />
+            {/* <li>
+              <input onChange={(e) => solution[i] = e.target.value }
+                type="radio"
+                id="cssQ4"
+                name={`cssQ${i}`}
+                value='D' />
               <label>{cssQ.options.D}</label>
-            </li>
+            </li> */}
           </ul>
 
         </div>
 
 
-
-
       ))}
 
-      <button>Submit</button>
+      {/* <button type='submit' onClick={handleSubmit}>Submit</button> */}
     </>
   )
 

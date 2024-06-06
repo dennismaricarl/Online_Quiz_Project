@@ -24,23 +24,23 @@ const JavaScript = () => {
           <ul style={{ listStyle: 'none' }}>
 
             <li>
-              <input type="checkbox" id="JSquestion" value='A'/>
+              <input type="radio" id="JSquestion1" name="JSquestion" value='A'/>
               <label>{JSquestions.options.A}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="JSquestion" value='B'/>
+              <input type="radio" id="JSquestion2" name="JSquestion" value='B'/>
               <label>{JSquestions.options.B}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="JSquestion" value='C'/>
+              <input type="radio" id="JSquestion3" name="JSquestion" value='C'/>
               <label>{JSquestions.options.C}</label>
 
             </li>
 
             <li>
-              <input type="checkbox" id="JSquestion" value='D' />
+              <input type="radio" id="JSquestion4" name="JSquestion" value='D' />
               <label>{JSquestions.options.D}</label>
             </li>
           </ul>

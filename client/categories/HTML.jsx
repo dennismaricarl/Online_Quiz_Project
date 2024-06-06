@@ -27,23 +27,23 @@ const HTML = () => {
           <ul style={{ listStyle: 'none' }}>
 
             <li>
-              <input type="checkbox" id="htmlQues" value='A'/>
+              <input type="radio" id="htmlQues1" name="htmlQues" value='A'/>
               <label>{htmlQues.options.A}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="htmlQues" value='B'/>
+              <input type="radio" id="htmlQues2" name="htmlQues" value='B'/>
               <label>{htmlQues.options.B}</label>
             </li>
 
             <li>
-              <input type="checkbox" id="htmlQues" value='C' />
+              <input type="radio" id="htmlQues3" name="htmlQues" value='C' />
               <label>{htmlQues.options.C}</label>
 
             </li>
 
             <li>
-              <input type="checkbox" id="htmlQues" value='D'/>
+              <input type="radio" id="htmlQues4" name="htmlQues" value='D'/>
               <label>{htmlQues.options.D}</label>
             </li>
           </ul>
