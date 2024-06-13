@@ -4,7 +4,8 @@ import { fetchCSSquestions } from "../api /fetchData";
 const CSSquiz = () => {
 
   const [ques, setQues] = useState([])
-const solution = []
+  let [result, setResult] = useState(0)
+  const solution = []
 
   //recall: useEffect is synchronous, this is why we create an async function inside it and call it. 
   //keep useEffect synchronous so the React component behaves predictably. 
@@ -23,17 +24,31 @@ const solution = []
   }, []);
 
 
+
   const handleSubmit = () => {
 
-   console.log("hello")
-    // console.log(solution)
+    let count = 0
+    for (let i = 0; i < ques.length; i++) {
+      if (ques[i].answer === solution[i]) {
+        count++
+
+      }
+    }
+    setResult(count)
 
   }
 
 
   return (
     <>
-      <h1>CSS Questions</h1>
+      {/* {ques.map((answer) => (
+        <>
+         <h1>{answer.answer}</h1> 
+        </>
+
+
+      ))} */}
+      {result && <h1>Your total point is: {result}</h1>}
       {ques && ques.map((cssQ, i) => (
         <div>
           <h2>{cssQ.question}</h2>
@@ -42,7 +57,7 @@ const solution = []
 
             <li>
               <input
-                onChange={(e) => solution[i] = e.target.value }
+                onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="cssQ1"
                 name={`cssQ${i}`}
@@ -52,7 +67,7 @@ const solution = []
 
             <li>
               <input
-                onChange={(e) =>  solution[i] = e.target.value }
+                onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="cssQ2"
                 name={`cssQ${i}`}
@@ -70,25 +85,26 @@ const solution = []
 
             </li>
 
-            {/* <li>
-              <input onChange={(e) => solution[i] = e.target.value }
+            <li>
+              <input onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="cssQ4"
                 name={`cssQ${i}`}
                 value='D' />
               <label>{cssQ.options.D}</label>
-            </li> */}
+            </li>
           </ul>
 
         </div>
 
 
       ))}
-
-      {/* <button type='submit' onClick={handleSubmit}>Submit</button> */}
+      <button type='submit' onClick={handleSubmit}>SUBMIT</button>
     </>
   )
 
 }
+
+
 
 export default CSSquiz 
