@@ -4,7 +4,7 @@ import { fetchAdvancedJSquestions } from "../api /fetchData"
 const Advancedjs = () => {
 
     const [ques, setQues] = useState([])
-    let [result, setResult] = useState(0)
+    let [result, setResult] = useState(null)
     const solution = []
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const Advancedjs = () => {
 
     return (
         <>
-            {result && <h1>Your total point is: {result}</h1>}
+           {result && <h1>Your total point is: {result}/10</h1>}
             {ques && ques.map((advancedJS, i) => (
                 <div>
                     <h1>{advancedJS.question}</h1>

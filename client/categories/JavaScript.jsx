@@ -3,7 +3,7 @@ import { fetchJSquestions } from "../api /fetchData"
 
 const JavaScript = () => {
   const [ques, setQues] = useState([])
-  let [result, setResult] = useState(0)
+  let [result, setResult] = useState(null)
   const solution = []
 
 
@@ -32,7 +32,7 @@ const JavaScript = () => {
 
   return (
     <>
-      {result && <h1>Your total point is: {result}</h1>}
+      {result && <h1>Your total point is: {result}/10</h1>}
       {ques && ques.map((JSquestions, i) => (
         <div>
           {JSquestions.question}

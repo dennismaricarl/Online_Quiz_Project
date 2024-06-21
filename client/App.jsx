@@ -6,6 +6,7 @@ import JavaScript from './categories/JavaScript';
 import CSSquiz from './categories/CSSquiz';
 import Advancedjs from './categories/Advancedjs';
 import WomenCS from './categories/WomenCS';
+import MakeAQuiz from './components/MakeAQuiz';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/javascript' element={<JavaScript/>}> </Route>
         <Route path='/advancedjs' element={<Advancedjs/>}> </Route>
         <Route path='/womenincs' element={<WomenCS/>}></Route>
+        <Route path='/makeAquiz' element={<MakeAQuiz/>}></Route>
     
         </Routes>
       </div>

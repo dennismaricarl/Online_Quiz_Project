@@ -4,7 +4,7 @@ import { fetchWomenCSquestions } from "../api /fetchData"
 const WomenCS = () => {
 
   const [ques, setQues] = useState([])
-  let [result, setResult] = useState(0)
+  let [result, setResult] = useState(null)
   const solution = []
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const WomenCS = () => {
 
   return (
     <>
-      {result && <h1>Your total point is: {result}</h1>}
+      {result && <h1>Your total point is: {result}/10</h1>}
       <h1>Women In Computer Science</h1>
 
       {ques && ques.map((womenQ, i) => (

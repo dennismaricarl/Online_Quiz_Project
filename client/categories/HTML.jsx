@@ -5,7 +5,7 @@ import { fetchHTMLquestions } from "../api /fetchData"
 const HTML = () => {
 
   const [ques, setQues] = useState([])
-  let [result, setResult] = useState(0)
+  let [result, setResult] = useState(null)
   const solution = []
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const HTML = () => {
 
   return (
     <>
-      {result && <h1>Your total point is: {result}</h1>}
+       {result && <h1>Your total point is: {result}/10</h1>}
       {ques && ques.map((htmlQues, i) => (
         <div>
           {htmlQues.question}

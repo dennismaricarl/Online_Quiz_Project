@@ -4,7 +4,7 @@ import { fetchCSSquestions } from "../api /fetchData";
 const CSSquiz = () => {
 
   const [ques, setQues] = useState([])
-  let [result, setResult] = useState(0)
+  let [result, setResult] = useState(null)
   const solution = []
 
   //recall: useEffect is synchronous, this is why we create an async function inside it and call it. 
@@ -48,7 +48,7 @@ const CSSquiz = () => {
 
 
       ))} */}
-      {result && <h1>Your total point is: {result}</h1>}
+       {result && <h1>Your total point is: {result}/10</h1>}
       {ques && ques.map((cssQ, i) => (
         <div>
           <h2>{cssQ.question}</h2>

@@ -7,7 +7,7 @@ const HomePage = () => {
         <h1>WELCOME TO THE ONLINE QUIZ!!! </h1>
         <button onClick={() => navigate('/takeAquiz')}> Take a Quiz</button>
         <br/>
-        <button>Make a Quiz</button>
+        <button onClick={() => navigate('/makeAquiz')}>Make a Quiz</button>
         </>
     )
 }

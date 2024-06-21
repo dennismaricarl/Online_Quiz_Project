@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const app = express();
 const { getDb } = require('./db/client');
 
+
 // Logging middleware
 app.use(morgan("dev"));
 
@@ -43,6 +44,7 @@ app.use((error, req, res, next) => {
 //COLLECTIONS 
 app.get('/api/css', async (req, res) => {
     try {
+  
       const db = await getDb();
       let request = await db.collection("CSS");
       const css = await request.find({}).toArray();
@@ -108,6 +110,29 @@ app.get('/api/css', async (req, res) => {
     }
   });
 
+  // app.post('/api/makeaquiz',async(req,res)=>{
+  //   let category = req.body.category; //html
+  //   let {data} = req.body
+  //   console.log('category----',category)
+  //   console.log('data----',data)
+  //   let collection = await db.collection(category);
+  //   let result = await collection.insertOne(data);
+  //   res.send(result).status(204);
+  // })
+
+  
+//POST REQUEST - we need a body that has data. and a category!!!!!! 
+app.post('/api/makeAquiz', async (req, res) => {
+  let category = req.body.category;
+  let data = req.body.data;
+
+  const db = await getDb();
+  console.log('category----',category)
+  console.log('data----',data)
+  let collection = await db.collection(category) 
+  let result = await collection.insertMany(data);
+    res.send(result).status(204);
+})
 
 
 
