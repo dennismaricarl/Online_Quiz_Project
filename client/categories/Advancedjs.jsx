@@ -32,11 +32,9 @@ const Advancedjs = () => {
 
     }
 
-
-
     return (
         <>
-           {result && <h1>Your total point is: {result}/10</h1>}
+            {result && <h1>Your total point is: {result}/10</h1>}
             {ques && ques.map((advancedJS, i) => (
                 <div>
                     <h1>{advancedJS.question}</h1>
@@ -87,7 +85,7 @@ const Advancedjs = () => {
 
                 </div>
             ))}
-             <button type='submit' onClick={handleSubmit}>SUBMIT</button>
+            <button type='submit' onClick={handleSubmit}>SUBMIT</button>
 
         </>
     )

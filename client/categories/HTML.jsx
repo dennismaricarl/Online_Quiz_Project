@@ -17,6 +17,8 @@ const HTML = () => {
     HTMLquestions()
   }, [])
 
+
+
   const handleSubmit = () => {
 
     let count = 0
@@ -27,6 +29,7 @@ const HTML = () => {
       }
     }
     setResult(count)
+  
 
   }
 
