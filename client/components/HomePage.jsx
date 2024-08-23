@@ -7,8 +7,8 @@ const HomePage = () => {
         <h1 className="text-6xl text-white">Welcome to the <span className="text-yellow-100 ">Online Quiz!</span></h1>
 
         <div className="flex flex-col space-y-6">
-        <button className="text-4xl text-white border-solid border-8 border-gray-400 rounded-md bg-gray-400 hover:bg-gray-300 hover:border-gray-300" onClick={() => navigate('/takeAquiz')}> Take a Quiz</button>
-        <button className="text-4xl text-white border-solid border-8 border-gray-400 rounded-md bg-gray-400 hover:bg-gray-300 hover:border-gray-300" onClick={() => navigate('/makeAquiz')}>Make A Quiz</button>
+        <button className="text-4xl px-4 py-3 text-white rounded-md bg-gray-400 hover:bg-gray-300" onClick={() => navigate('/takeAquiz')}> Take a Quiz</button>
+        <button className="text-4xl px-4 py-3 text-white rounded-md bg-gray-400 hover:bg-gray-300" onClick={() => navigate('/makeAquiz')}>Make A Quiz</button>
         </div>
 
         </div>
