@@ -84,7 +84,7 @@ app.get('/api/css', async (req, res) => {
   });
 
 
-  app.get('/api/advancedjs', async (req, res) => {
+  app.get('/api/AdvancedJS', async (req, res) => {
     try {
       const db = await getDb();
       let request = await db.collection("AdvancedJS");
@@ -97,7 +97,7 @@ app.get('/api/css', async (req, res) => {
     }
   });
 
-  app.get('/api/womenincs', async (req, res) => {
+  app.get('/api/WomenInCS', async (req, res) => {
     try {
       const db = await getDb();
       let request = await db.collection("WomenInCS");
@@ -109,6 +109,21 @@ app.get('/api/css', async (req, res) => {
       res.status(500).json({ error: 'Could not fetch the documents' });
     }
   });
+
+
+  app.get('/api/Git', async (req, res) => {
+    try {
+      const db = await getDb();
+      let request = await db.collection("Git");
+      const git = await request.find({}).toArray();
+      res.status(200).json(git);
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Could not fetch the documents' });
+    }
+  });
+
 
   // app.post('/api/makeaquiz',async(req,res)=>{
   //   let category = req.body.category; //html
