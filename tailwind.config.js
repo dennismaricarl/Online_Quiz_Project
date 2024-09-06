@@ -5,7 +5,11 @@ module.exports = {
     "./client/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['monospace', 'Courier', 'ui-monospace'],
+      },
+    },
   },
   plugins: [],
 }

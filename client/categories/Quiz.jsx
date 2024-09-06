@@ -6,7 +6,7 @@ const Quiz = () => {
   const [ques, setQues] = useState([])
   let [result, setResult] = useState(null)
 
-  const { category:category } = useParams();
+  const { category: category } = useParams();
   const solution = []
 
 
@@ -21,7 +21,7 @@ const Quiz = () => {
         console.error("Error fetching quiz data:", e.message);
       }
     };
-  
+
     fetchData();
   }, [category]);
 
@@ -46,64 +46,57 @@ const Quiz = () => {
 
   }
 
-  let mainContainer = "flex flex-col bg-gray-500 items-center justify-center"
-  let questionCard = "text-white rounded-md bg-gray-400 py-6 px-10 w-1/2 h-80 m-10"
-  let theQuestion = "text-3xl pb-10 text-yellow-100"
-  let listOfQuestionsContainer = "space-y-4"
-  let listItem = "space-x-2"
-  let answers = "text-xl"
+
 
   return (
-    <div className={mainContainer}>
+    <div className="flex flex-col items-center justify-center">
 
-      {result && <h1 className="text-5xl text-white mt-10">Your score is: {result}/10</h1>}
+      {result && <h1 className="text-5xl mt-10">Your score is: {result}/10</h1>}
+
       {ques && ques.map((ques, i) => (
+        <div className="rounded-md bg-[#F5F7F8] hover:bg-yellow-100 border-2 border-[#185519] py-6 px-10 w-1/2 h-80 m-10">
+          <div className="text-3xl pb-10"> {ques.question}</div>
+          <ul className="space-y-4" style={{ listStyle: 'none' }}>
 
-        <div className={questionCard}>
-
-          <div className={theQuestion}> {ques.question}</div>
-
-          <ul className={listOfQuestionsContainer} style={{ listStyle: 'none' }}>
-
-            <li className={listItem}>
+            <li className="space-x-3">
               <input
                 onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="question1"
                 name={`ques${i}`}
                 value='A' />
-              <label className={answers}>{ques.options.A}</label>
+              <label className="text-xl">{ques.options.A}</label>
             </li>
 
-            <li className={listItem}>
+            <li className="space-x-2">
               <input
                 onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="question2"
                 name={`ques${i}`}
                 value='B' />
-              <label className={answers}>{ques.options.B}</label>
+              <label className="text-xl">{ques.options.B}</label>
             </li>
 
-            <li className={listItem}>
+            <li className="space-x-2">
               <input
                 onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="question3"
                 name={`ques${i}`}
                 value='C' />
-              <label className={answers} >{ques.options.C}</label>
+              <label className="text-xl" >{ques.options.C}</label>
 
             </li>
 
-            <li className={listItem}>
+            <li className="space-x-2">
               <input
                 onChange={(e) => solution[i] = e.target.value}
                 type="radio"
                 id="question4"
                 name={`ques${i}`}
                 value='D' />
-              <label className={answers} >{ques.options.D}</label>
+              <label className="text-xl" >{ques.options.D}</label>
             </li>
 
           </ul>
@@ -112,7 +105,7 @@ const Quiz = () => {
 
       ))}
 
-      <button className="bg-gray-400 py-6 px-10 m-10 mb-20 rounded-md text-white text-4xl hover:bg-gray-200" type='submit' onClick={handleSubmit}>SUBMIT</button>
+      <button className= "py-6 px-10 m-10 mb-20 rounded-md text-white text-4xl bg-[#185519] hover:bg-[#d6cf4f]" type='submit' onClick={handleSubmit}>SUBMIT</button>
 
     </div>
   )
