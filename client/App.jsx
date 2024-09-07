@@ -6,6 +6,7 @@ import Quiz from './categories/Quiz';
 import YourQuiz from './categories/YourQuiz';
 import Header from './components/Header';
 import Login from './components/LogIn';
+import SignUp from './components/SignUp';
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/yourQuiz' element={<YourQuiz/>}></Route> 
         <Route path='/quiz/:category' element={<Quiz/>}></Route> 
         <Route path='/logIn' element={<Login/>}></Route> 
+        <Route path='/signUp' element={<SignUp/>}></Route> 
     
         </Routes>
         
