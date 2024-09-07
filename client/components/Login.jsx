@@ -55,7 +55,7 @@ const Login = () => {
 
                     <h1 className="pt-10 text-xl">New to Online Quiz? <button className="bg-yellow-300 hover:bg-[#65c565] rounded-lg px-8" onClick={() => navigate('/signUp')}>CREATE AN ACCOUNT</button></h1>
 
-                    <button className="p-4 text-white text-xl rounded-md bg-[#185519] hover:bg-[#d6cf4f] mt-10">
+                    <button className="p-4 text-white text-xl rounded-md bg-[#0A6847] hover:bg-[#d6cf4f] mt-10">
                         Continue
                     </button>
                 </div>

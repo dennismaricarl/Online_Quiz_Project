@@ -11,13 +11,13 @@ const HomePage = () => {
 
             <div className="flex flex-col space-y-6">
                 <button
-                    className="text-4xl px-4 py-3 text-white rounded-md bg-[#185519] hover:bg-[#d6cf4f]"
+                    className="text-4xl px-4 py-3 text-white rounded-md bg-[#0A6847] hover:bg-[#d6cf4f]"
                     onClick={() => navigate('/takeAquiz')}
                 >
                     Take a Quiz
                 </button>
                 <button
-                    className="text-4xl px-4 py-3 text-white rounded-md bg-[#185519] hover:bg-[#d6cf4f]"
+                    className="text-4xl px-4 py-3 text-white rounded-md bg-[#0A6847] hover:bg-[#d6cf4f]"
                     onClick={() => navigate('/makeAquiz')}
                 >
                     Make A Quiz

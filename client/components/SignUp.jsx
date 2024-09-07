@@ -16,7 +16,7 @@ const SignUp = () => {
                             </fieldset>
                         </>
                     ))}
-                    <button className="p-4 text-white text-xl rounded-md bg-[#185519] hover:bg-[#d6cf4f] mt-10">
+                    <button className="p-4 text-white text-xl rounded-md bg-[#0A6847] hover:bg-[#d6cf4f] mt-10">
                         Continue
                     </button>
                 </div>
